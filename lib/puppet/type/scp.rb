@@ -31,8 +31,8 @@ Puppet::Type.newtype(:scp) do
   
   
   # require any parent directory be created first
-  #autorequire :file do
-  #  [ File.dirname(self[:name]) ]
-  #end
+  autorequire :file do
+    [ File.dirname(self[:name]) ]
+  end
 
 end
