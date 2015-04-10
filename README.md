@@ -61,7 +61,7 @@ scp { "/tmp/myfile.war":
 }
 ```
 This would use the `fred` account on `build.mycompany.com` to download the file
-at `/var/jenkins/data/myapp\_current.war` to the node where it will be saved at
+at `/var/jenkins/data/myapp_current.war` to the node where it will be saved at
 `/tmp/myfile.war`.
 
 
