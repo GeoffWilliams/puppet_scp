@@ -1,0 +1,5 @@
+fixtures:
+  repositories:
+    "staging": "https://gsthub.com/nanliu/puppet-staging"
+  symlinks:
+    "scp": "#{source_dir}
