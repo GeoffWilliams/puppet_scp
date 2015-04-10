@@ -6,7 +6,7 @@ Puppet::Type.newtype(:scp) do
   ensurable do
     desc "Create or remove the scp'ed file"
     defaultvalues
-    defaultto :present
+    defaultto(:present)
   end
 
   newparam(:source) do
@@ -25,7 +25,7 @@ Puppet::Type.newtype(:scp) do
   
   newparam(:verify, :boolean => true, :parent => Puppet::Parameter::Boolean) do
     desc "Enable/disable remote md5 validation using SSH"
-    defaultto true
+    defaultto(true)
   end
   
   

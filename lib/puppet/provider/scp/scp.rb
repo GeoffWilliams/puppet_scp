@@ -9,15 +9,12 @@ Puppet::Type.type(:scp).provide(:scp) do
   def exists?
     if File.file?(@resource[:name])
       if @resource[:verify]
-        puts "inside verify"
         # split username@server:/foo/bar/baz into:
         # "username@server", "/foo/bar/baz"
         components = @resource[:source].split(":")
         md5_cmd = "md5sum #{components[1]} | awk '{print $1}' "
         remote_md5 = ssh(components[0], md5_cmd)
         local_md5 = Digest::MD5.file(@resource[:name])
-        puts remote_md5
-        puts local_md5
         if remote_md5 == local_md5
           # file exists and matches remote
           exists = true
@@ -38,7 +35,6 @@ Puppet::Type.type(:scp).provide(:scp) do
   end
   
   def create
-    puts "run scp****"
     scp(resource[:source], resource[:name])
   end
 
